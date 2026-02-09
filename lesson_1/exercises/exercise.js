@@ -89,10 +89,19 @@ console.log("End");
 
 // TODO: Predicted output order:
 // ???
+// --- Exercise 3 ---
+// Start
+// End
+// 
+// Timeout callback
 
 // TODO: What happens if you change 2000 to 0? Write your answer:
 // ???
-
+// --- Exercise 3 ---
+// Start
+// End
+// 
+// Timeout callback
 
 // ------------------------------------------------------------
 // Exercise 4: Zero-Delay setTimeout
@@ -108,6 +117,8 @@ console.log("3");
 // TODO: Write a 2-sentence explanation of why "2" prints last
 //       even though the delay is 0 milliseconds.
 // ???
+// 2 prints last since it is forced back into the query. And everything in the query has to wait to be pushed to the stack after the stack finishes
+// all it's current tasks.
 
 
 // ------------------------------------------------------------
@@ -124,6 +135,12 @@ console.log("D");
 
 // TODO: Predicted output order:
 // ???
+//console.log("\n--- Exercise 5 ---");
+//setTimeout(() => console.log("B"), 100);
+//setTimeout(() => console.log("C"), 200);
+//setTimeout(() => console.log("A"), 300);
+//console.log("D");
+
 
 
 // ------------------------------------------------------------
@@ -136,20 +153,20 @@ console.log("D");
 
 console.log("\n--- Exercise 6 ---");
 
-// console.log("Before loop");
-// const start = Date.now();
-// while (Date.now() - start < 3000) {
+ console.log("Before loop");
+ const start = Date.now();
+ while (Date.now() - start < 3000) {
 //   // Blocking for 3 seconds
-// }
-// console.log("After loop");
+}
+console.log("After loop");
 
 // TODO: Answer these questions as comments:
 // 1. Can you click anything on the page during those 3 seconds?
-//    ???
+//    ??? No
 // 2. Why does this happen?
-//    ???
+//    ??? Since all the tasks are being pushed into the stack making it so that other tasks are unable to be performed by the browser.
 // 3. How does this relate to alert() blocking behavior?
-//    ???
+//    ??? They both stop different elements from going into the stacks.
 
 
 // ------------------------------------------------------------
@@ -173,7 +190,7 @@ greet("Alice", () => {
 console.log("End");
 
 // TODO: Is the callback in this example synchronous or asynchronous? Why?
-// ???
+// ??? syncrhonus because it can call it without apis,
 
 // TODO: Modify the greet function below to make the callback asynchronous
 //       using setTimeout.
