@@ -19,7 +19,7 @@
 // For the code below, write out the call stack at each
 // numbered comment as a comment (e.g., // Stack: [a]).
 
-function a() {
+function a() { [1]
   // TODO: What is the call stack at [1]?
   // Stack at [1]: ???
   b();
@@ -27,7 +27,7 @@ function a() {
   // Stack at [4]: ???
 }
 
-function b() {
+function b() {[2]
   // TODO: What is the call stack at [2]?
   // Stack at [2]: ???
   c();
@@ -35,11 +35,12 @@ function b() {
   // Stack at [3]: ???
 }
 
-function c() {
-  console.log("Hello from c!");
+function c() { [3]
+  console.log("Hello from c!"); [4]
 }
 
-a();
+a(); 
+
 // TODO: What is the call stack at [5]?
 // Stack at [5]: ???
 
@@ -52,11 +53,11 @@ a();
 // TODO: Before running, write your predicted output as comments
 // below each console.log group. Then run to verify.
 
-console.log("\n--- Exercise 2 ---");
+console.log("\n--- Exercise 2 ---"); //[1]
 
-function first() { console.log("1"); }
-function second() { console.log("2"); }
-function third() { console.log("3"); }
+function first() { console.log("1"); } //[3]
+function second() { console.log("2"); } //[2]
+function third() { console.log("3"); }//[4]
 
 second();
 first();
@@ -64,7 +65,10 @@ third();
 
 // Predicted output:
 // ???
-
+//--- Exercise 2 ---
+// 2
+// 1
+// 4
 
 // ------------------------------------------------------------
 // Exercise 3: Introduction to setTimeout
